@@ -1,0 +1,480 @@
+{
+  "summary": {
+    "total_cases": 52,
+    "passed": 51,
+    "failed": 1,
+    "success_rate": "98.1%",
+    "total_wall_time_s": 0.6711227893829346,
+    "avg_latency_ms": 12.885786019838774
+  },
+  "results": [
+    {
+      "case_id": 1,
+      "expression": "x + x + y",
+      "description": "Basic addition",
+      "status": "PASSED",
+      "time_ms": 85.7248306274414,
+      "error": "",
+      "result_latex": "2 x + y"
+    },
+    {
+      "case_id": 2,
+      "expression": "(x + 1)**2 - (x - 1)**2",
+      "description": "Algebraic expansion",
+      "status": "PASSED",
+      "time_ms": 9.983301162719727,
+      "error": "",
+      "result_latex": "4 x"
+    },
+    {
+      "case_id": 3,
+      "expression": "0 * x + 1",
+      "description": "Identity reduction",
+      "status": "PASSED",
+      "time_ms": 1.5268325805664062,
+      "error": "",
+      "result_latex": "1"
+    },
+    {
+      "case_id": 4,
+      "expression": "1/x * x",
+      "description": "Cancellation",
+      "status": "PASSED",
+      "time_ms": 0.9458065032958984,
+      "error": "",
+      "result_latex": "1"
+    },
+    {
+      "case_id": 5,
+      "expression": "0",
+      "description": "Minimalist input (Zero)",
+      "status": "PASSED",
+      "time_ms": 0.4115104675292969,
+      "error": "",
+      "result_latex": "0"
+    },
+    {
+      "case_id": 6,
+      "expression": "exp(i*pi)",
+      "description": "Euler identity (pi)",
+      "status": "PASSED",
+      "time_ms": 0.9357929229736328,
+      "error": "",
+      "result_latex": "-1"
+    },
+    {
+      "case_id": 7,
+      "expression": "exp(j*pi/2)",
+      "description": "Euler identity (j*pi/2)",
+      "status": "PASSED",
+      "time_ms": 1.3699531555175781,
+      "error": "",
+      "result_latex": "i"
+    },
+    {
+      "case_id": 8,
+      "expression": "exp(I*pi/4)",
+      "description": "Fixed-point twiddle (45 deg)",
+      "status": "PASSED",
+      "time_ms": 4.89044189453125,
+      "error": "",
+      "result_latex": "e^{\\frac{i \\pi}{4}}"
+    },
+    {
+      "case_id": 9,
+      "expression": "Abs(exp(i*theta))",
+      "description": "Complex magnitude on unit circle",
+      "status": "PASSED",
+      "time_ms": 1.7895698547363281,
+      "error": "",
+      "result_latex": "1"
+    },
+    {
+      "case_id": 10,
+      "expression": "conjugate(a + i*b)",
+      "description": "Complex conjugation (Symbolic)",
+      "status": "PASSED",
+      "time_ms": 16.813039779663086,
+      "error": "",
+      "result_latex": "a - i b"
+    },
+    {
+      "case_id": 11,
+      "expression": "conjugate(conjugate(X[k]))",
+      "description": "Double conjugation (Risk: Identity)",
+      "status": "PASSED",
+      "time_ms": 2.129077911376953,
+      "error": "",
+      "result_latex": "{X}_{k}"
+    },
+    {
+      "case_id": 12,
+      "expression": "exp(j*theta1) * exp(j*theta2)",
+      "description": "Phase rotation chain",
+      "status": "PASSED",
+      "time_ms": 9.186744689941406,
+      "error": "",
+      "result_latex": "e^{i \\theta_{1} + i \\theta_{2}}"
+    },
+    {
+      "case_id": 13,
+      "expression": "x[n] * delta[n]",
+      "description": "Impulse sampling",
+      "status": "FAILED",
+      "time_ms": 0.7312297821044922,
+      "error": "Parsing error: 'FunctionClass' object is not subscriptable. Use Python math syntax (e.g. Sum(X[k]*exp(i*k), (k, 0, N-1)))",
+      "result_latex": null
+    },
+    {
+      "case_id": 14,
+      "expression": "X[k] + X[k-1]",
+      "description": "Spectral addition",
+      "status": "PASSED",
+      "time_ms": 6.202459335327148,
+      "error": "",
+      "result_latex": "{X}_{k - 1} + {X}_{k}"
+    },
+    {
+      "case_id": 15,
+      "expression": "H[k] * X[k]",
+      "description": "DFT domain convolution",
+      "status": "PASSED",
+      "time_ms": 3.2296180725097656,
+      "error": "",
+      "result_latex": "{H}_{k} {X}_{k}"
+    },
+    {
+      "case_id": 16,
+      "expression": "Sum(X[k]*exp(i*k*n), (k, 0, N-1))",
+      "description": "Inverse DFT structure",
+      "status": "PASSED",
+      "time_ms": 35.04586219787598,
+      "error": "",
+      "result_latex": "\\sum_{k=0}^{N - 1} e^{i k n} {X}_{k}"
+    },
+    {
+      "case_id": 17,
+      "expression": "Sum(X[k]*exp(i*2*pi*k*n/N), (k,0,N-1)) / N",
+      "description": "IDFT standard notation",
+      "status": "PASSED",
+      "time_ms": 61.31768226623535,
+      "error": "",
+      "result_latex": "\\frac{\\sum_{k=0}^{N - 1} e^{\\frac{2 i \\pi k n}{N}} {X}_{k}}{N}"
+    },
+    {
+      "case_id": 18,
+      "expression": "a * y[n-1] + b * x[n]",
+      "description": "IIR/FIR hybrid indexing",
+      "status": "PASSED",
+      "time_ms": 11.11745834350586,
+      "error": "",
+      "result_latex": "a {y}_{n - 1} + b {x}_{n}"
+    },
+    {
+      "case_id": 19,
+      "expression": "H1[k] * H2[k] * X[k]",
+      "description": "Cascaded filtering chain",
+      "status": "PASSED",
+      "time_ms": 4.32896614074707,
+      "error": "",
+      "result_latex": "{H_{1}}_{k} {H_{2}}_{k} {X}_{k}"
+    },
+    {
+      "case_id": 20,
+      "expression": "x[n-2] * X[k]",
+      "description": "Mixed domain delay test",
+      "status": "PASSED",
+      "time_ms": 6.589412689208984,
+      "error": "",
+      "result_latex": "{X}_{k} {x}_{n - 2}"
+    },
+    {
+      "case_id": 21,
+      "expression": "Integral(exp(-t**2), (t, -oo, oo))",
+      "description": "Gaussian Integral (Definite)",
+      "status": "PASSED",
+      "time_ms": 82.4441909790039,
+      "error": "",
+      "result_latex": "\\sqrt{\\pi}"
+    },
+    {
+      "case_id": 22,
+      "expression": "Integral(exp(-a*t), (t, 0, oo))",
+      "description": "Laplace structure",
+      "status": "PASSED",
+      "time_ms": 20.647525787353516,
+      "error": "",
+      "result_latex": "\\begin{cases} \\frac{1}{a} & \\text{for}\\: \\left|{\\arg{\\left(a \\right)}}\\right| < \\frac{\\pi}{2} \\\\\\int\\limits_{0}^{\\infty} e^{- a t}\\, dt & \\text{otherwise} \\end{cases}"
+    },
+    {
+      "case_id": 23,
+      "expression": "2pi * f * t",
+      "description": "Implicit multiplication (2pi)",
+      "status": "PASSED",
+      "time_ms": 2.015352249145508,
+      "error": "",
+      "result_latex": "2 \\pi f t"
+    },
+    {
+      "case_id": 24,
+      "expression": "j2pi",
+      "description": "Implicit multiplication (j2pi)",
+      "status": "PASSED",
+      "time_ms": 0.6334781646728516,
+      "error": "",
+      "result_latex": "j2pi"
+    },
+    {
+      "case_id": 25,
+      "expression": "x[n]*cos(theta) + i*x[n]*sin(theta)",
+      "description": "Mixed Real/Complex bug trap",
+      "status": "PASSED",
+      "time_ms": 19.99974250793457,
+      "error": "",
+      "result_latex": "\\left(i \\sin{\\left(\\theta \\right)} + \\cos{\\left(\\theta \\right)}\\right) {x}_{n}"
+    },
+    {
+      "case_id": 26,
+      "expression": "conjugate(H[f]) / (Abs(H[f])**2 + N0)",
+      "description": "MMSE Equalization structure",
+      "status": "PASSED",
+      "time_ms": 15.781164169311523,
+      "error": "",
+      "result_latex": "\\frac{\\overline{{H}_{f}}}{\\left|{{H}_{f}}\\right|^{2} + N_{0}}"
+    },
+    {
+      "case_id": 27,
+      "expression": "conjugate(H[k]) / (Abs(H[k])**2 + N0/Es)",
+      "description": "Wiener Filter structure",
+      "status": "PASSED",
+      "time_ms": 28.12671661376953,
+      "error": "",
+      "result_latex": "\\frac{Es \\overline{{H}_{k}}}{Es \\left|{{H}_{k}}\\right|^{2} + N_{0}}"
+    },
+    {
+      "case_id": 28,
+      "expression": "X[z] * z**(-1)",
+      "description": "Z-transform delay (z^-1)",
+      "status": "PASSED",
+      "time_ms": 3.9877891540527344,
+      "error": "",
+      "result_latex": "\\frac{{X}_{z}}{z}"
+    },
+    {
+      "case_id": 29,
+      "expression": "1 / (1 - a*z**(-1))",
+      "description": "Z-domain pole structure",
+      "status": "PASSED",
+      "time_ms": 9.246826171875,
+      "error": "",
+      "result_latex": "\\frac{z}{- a + z}"
+    },
+    {
+      "case_id": 30,
+      "expression": "Abs(X[k])**2",
+      "description": "Power spectrum term (|X|^2)",
+      "status": "PASSED",
+      "time_ms": 2.7277469635009766,
+      "error": "",
+      "result_latex": "\\left|{{X}_{k}}\\right|^{2}"
+    },
+    {
+      "case_id": 31,
+      "expression": "re(X[k])**2 + im(X[k])**2",
+      "description": "Symbolic realization of norm",
+      "status": "PASSED",
+      "time_ms": 6.360769271850586,
+      "error": "",
+      "result_latex": "\\left(\\operatorname{re}{\\left({X}_{k}\\right)}\\right)^{2} + \\left(\\operatorname{im}{\\left({X}_{k}\\right)}\\right)^{2}"
+    },
+    {
+      "case_id": 32,
+      "expression": "1 / (x + 1e-9)",
+      "description": "Near-zero division risk",
+      "status": "PASSED",
+      "time_ms": 9.624958038330078,
+      "error": "",
+      "result_latex": "\\frac{1.0}{1.0 x + 1.0 \\cdot 10^{-9}}"
+    },
+    {
+      "case_id": 33,
+      "expression": "exp(exp(exp(x)))",
+      "description": "Deeply nested AST stress",
+      "status": "PASSED",
+      "time_ms": 1.4972686767578125,
+      "error": "",
+      "result_latex": "e^{e^{e^{x}}}"
+    },
+    {
+      "case_id": 34,
+      "expression": "expand((x+1)*(x-1))",
+      "description": "Explicit expand rule",
+      "status": "PASSED",
+      "time_ms": 5.822420120239258,
+      "error": "",
+      "result_latex": "\\left(x - 1\\right) \\left(x + 1\\right)"
+    },
+    {
+      "case_id": 35,
+      "expression": "factor(x**2 + 2*x + 1)",
+      "description": "Explicit factor rule",
+      "status": "PASSED",
+      "time_ms": 5.389928817749023,
+      "error": "",
+      "result_latex": "x^{2} + 2 x + 1"
+    },
+    {
+      "case_id": 36,
+      "expression": "simplify(sin(x)**2 + cos(x)**2)",
+      "description": "Explicit simplify (Trig)",
+      "status": "PASSED",
+      "time_ms": 14.745712280273438,
+      "error": "",
+      "result_latex": "1"
+    },
+    {
+      "case_id": 37,
+      "expression": "x[n] * exp(j*2*pi*k*n/N)",
+      "description": "Phase shift in time",
+      "status": "PASSED",
+      "time_ms": 15.722274780273438,
+      "error": "",
+      "result_latex": "e^{\\frac{2 i \\pi k n}{N}} {x}_{n}"
+    },
+    {
+      "case_id": 38,
+      "expression": "Integral(Integral(f, x), y)",
+      "description": "Nested Integrals",
+      "status": "PASSED",
+      "time_ms": 5.102396011352539,
+      "error": "",
+      "result_latex": "f x y"
+    },
+    {
+      "case_id": 39,
+      "expression": "Sum(Sum(X[k,m], (k,0,N-1)), (m,0,M-1))",
+      "description": "2D Summation",
+      "status": "PASSED",
+      "time_ms": 15.845298767089844,
+      "error": "",
+      "result_latex": "\\sum_{\\substack{0 \\leq k \\leq N - 1\\\\0 \\leq m \\leq M - 1}} {X}_{k,m}"
+    },
+    {
+      "case_id": 40,
+      "expression": "conjugate(H[k]) * X[k] + conjugate(X[k]) * H[k]",
+      "description": "Hermitian symmetry test",
+      "status": "PASSED",
+      "time_ms": 10.823249816894531,
+      "error": "",
+      "result_latex": "\\overline{{H}_{k}} {X}_{k} + \\overline{{X}_{k}} {H}_{k}"
+    },
+    {
+      "case_id": 41,
+      "expression": "log(Abs(X[k]))",
+      "description": "Log-magnitude (dB scale prep)",
+      "status": "PASSED",
+      "time_ms": 2.1522045135498047,
+      "error": "",
+      "result_latex": "\\log{\\left(\\left|{{X}_{k}}\\right| \\right)}"
+    },
+    {
+      "case_id": 42,
+      "expression": "sqrt(re(X[k])**2 + im(X[k])**2)",
+      "description": "Magnitude recovery",
+      "status": "PASSED",
+      "time_ms": 6.96110725402832,
+      "error": "",
+      "result_latex": "\\sqrt{\\left(\\operatorname{re}{\\left({X}_{k}\\right)}\\right)^{2} + \\left(\\operatorname{im}{\\left({X}_{k}\\right)}\\right)^{2}}"
+    },
+    {
+      "case_id": 43,
+      "expression": "X[k] / (H[k] + 0.0001)",
+      "description": "Regularized inverse filter",
+      "status": "PASSED",
+      "time_ms": 21.339893341064453,
+      "error": "",
+      "result_latex": "\\frac{1.0 {X}_{k}}{1.0 {H}_{k} + 0.0001}"
+    },
+    {
+      "case_id": 44,
+      "expression": "re(exp(i*theta))",
+      "description": "Real part extraction (Cosine)",
+      "status": "PASSED",
+      "time_ms": 2.4650096893310547,
+      "error": "",
+      "result_latex": "\\cos{\\left(\\theta \\right)}"
+    },
+    {
+      "case_id": 45,
+      "expression": "im(exp(i*theta))",
+      "description": "Imag part extraction (Sine)",
+      "status": "PASSED",
+      "time_ms": 1.2044906616210938,
+      "error": "",
+      "result_latex": "\\sin{\\left(\\theta \\right)}"
+    },
+    {
+      "case_id": 46,
+      "expression": "re(A+i*B) * re(C+i*D) - im(A+i*B) * im(C+i*D)",
+      "description": "Manually expanded complex mul",
+      "status": "PASSED",
+      "time_ms": 60.35947799682617,
+      "error": "",
+      "result_latex": "\\operatorname{re}{\\left(A\\right)} \\operatorname{re}{\\left(C\\right)} - \\operatorname{re}{\\left(A\\right)} \\operatorname{im}{\\left(D\\right)} - \\operatorname{re}{\\left(B\\right)} \\operatorname{re}{\\left(D\\right)} - \\operatorname{re}{\\left(B\\right)} \\operatorname{im}{\\left(C\\right)} - \\operatorname{re}{\\left(C\\right)} \\operatorname{im}{\\left(B\\right)} - \\operatorname{re}{\\left(D\\right)} \\operatorname{im}{\\left(A\\right)} - \\operatorname{im}{\\left(A\\right)} \\operatorname{im}{\\left(C\\right)} + \\operatorname{im}{\\left(B\\right)} \\operatorname{im}{\\left(D\\right)}"
+    },
+    {
+      "case_id": 47,
+      "expression": "x[n] * Piecewise((1, n>=0), (0, True))",
+      "description": "Piecewise step function logic",
+      "status": "PASSED",
+      "time_ms": 4.214286804199219,
+      "error": "",
+      "result_latex": "\\left(\\begin{cases} 1 & \\text{for}\\: n \\geq 0 \\\\0 & \\text{otherwise} \\end{cases}\\right) {x}_{n}"
+    },
+    {
+      "case_id": 48,
+      "expression": "lim(sin(x)/x, x, 0)",
+      "description": "Symbolic limit check (Sinc)",
+      "status": "PASSED",
+      "time_ms": 1.77001953125,
+      "error": "",
+      "result_latex": "1"
+    },
+    {
+      "case_id": 49,
+      "expression": "Sum(x[n], (n, -oo, oo))",
+      "description": "Asymptotic summation",
+      "status": "PASSED",
+      "time_ms": 6.411314010620117,
+      "error": "",
+      "result_latex": "\\sum_{n=-\\infty}^{\\infty} {x}_{n}"
+    },
+    {
+      "case_id": 50,
+      "expression": "exp(1e6 * i * theta)",
+      "description": "Dynamic range overflow stress",
+      "status": "PASSED",
+      "time_ms": 5.172252655029297,
+      "error": "",
+      "result_latex": "e^{1000000.0 i \\theta}"
+    },
+    {
+      "case_id": 51,
+      "expression": "1 / (1/H[k])",
+      "description": "Reciprocal symmetry (Ground truth check)",
+      "status": "PASSED",
+      "time_ms": 2.0020008087158203,
+      "error": "",
+      "result_latex": "{H}_{k}"
+    },
+    {
+      "case_id": 52,
+      "expression": "Integral(delta(t-tau)*x[t], (t, -oo, oo))",
+      "description": "Dirac sifting property",
+      "status": "PASSED",
+      "time_ms": 15.194416046142578,
+      "error": "",
+      "result_latex": "{x}_{\\tau}"
+    }
+  ]
+}

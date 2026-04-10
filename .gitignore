@@ -1,0 +1,12 @@
+node_modules/
+venv/
+__pycache__/
+verilog/
+*.pyc
+.env
+*.log
+dist/
+build/
+.DS_Store
+.backend.pid
+.frontend.pid

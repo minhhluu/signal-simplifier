@@ -1,0 +1,122 @@
+[
+  {
+    "iteration": 1,
+    "expression": "((exp(pi) - k) + Abs(x[n]))",
+    "status": "PASSED",
+    "latency_ms": 6.50477409362793
+  },
+  {
+    "iteration": 2,
+    "expression": "(H[f])**-1",
+    "status": "PASSED",
+    "latency_ms": 3.326416015625
+  },
+  {
+    "iteration": 3,
+    "expression": "(((0 - k))**-1 / ((n * H[f]) + (H[k] * H[k])))",
+    "status": "PASSED",
+    "latency_ms": 38.08140754699707
+  },
+  {
+    "iteration": 4,
+    "expression": "(-1 / exp(I))",
+    "status": "PASSED",
+    "latency_ms": 3.3295154571533203
+  },
+  {
+    "iteration": 5,
+    "expression": "(k + re(-1))",
+    "status": "PASSED",
+    "latency_ms": 2.321004867553711
+  },
+  {
+    "iteration": 6,
+    "expression": "Abs(((X[k] + k))**2)",
+    "status": "PASSED",
+    "latency_ms": 10.80632209777832
+  },
+  {
+    "iteration": 7,
+    "expression": "(0 - re(H[k]))",
+    "status": "PASSED",
+    "latency_ms": 2.7425289154052734
+  },
+  {
+    "iteration": 8,
+    "expression": "1.0",
+    "status": "PASSED",
+    "latency_ms": 0.54931640625
+  },
+  {
+    "iteration": 9,
+    "expression": "theta",
+    "status": "PASSED",
+    "latency_ms": 0.4184246063232422
+  },
+  {
+    "iteration": 10,
+    "expression": "(cos((I + H[k])) + (Abs(theta) * conjugate(1.0)))",
+    "status": "PASSED",
+    "latency_ms": 25.950193405151367
+  },
+  {
+    "iteration": 11,
+    "expression": "(k * ((H[f] + H[f]) + 1.0))",
+    "status": "PASSED",
+    "latency_ms": 17.549753189086914
+  },
+  {
+    "iteration": 12,
+    "expression": "x[n]",
+    "status": "PASSED",
+    "latency_ms": 1.3647079467773438
+  },
+  {
+    "iteration": 13,
+    "expression": "conjugate(re((0 * k)))",
+    "status": "PASSED",
+    "latency_ms": 1.1210441589355469
+  },
+  {
+    "iteration": 14,
+    "expression": "(((n - H[f]) * re(n)) / re((X[k])**2))",
+    "status": "PASSED",
+    "latency_ms": 31.753063201904297
+  },
+  {
+    "iteration": 15,
+    "expression": "sin(pi)",
+    "status": "PASSED",
+    "latency_ms": 0.6651878356933594
+  },
+  {
+    "iteration": 16,
+    "expression": "(Abs(cos(X[k])) / conjugate(cos(theta)))",
+    "status": "PASSED",
+    "latency_ms": 5.051612854003906
+  },
+  {
+    "iteration": 17,
+    "expression": "sin((1.0 / (x[n])**2))",
+    "status": "PASSED",
+    "latency_ms": 15.262365341186523
+  },
+  {
+    "iteration": 18,
+    "expression": "I",
+    "status": "PASSED",
+    "latency_ms": 0.5080699920654297
+  },
+  {
+    "iteration": 19,
+    "expression": "(((I * 0))**3 * cos(sin(H[k])))",
+    "status": "PASSED",
+    "latency_ms": 1.9855499267578125
+  },
+  {
+    "iteration": 20,
+    "expression": "(im(im(-1)) - ((H[f] - x[n]) + theta))",
+    "status": "PASSED",
+    "latency_ms": 7.798671722412109
+  }
+]
